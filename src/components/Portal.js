@@ -11,6 +11,8 @@ function Portal() {
     const toggleLoginSignup = () => {
         setShowLogin(!showLogin)
     }
+    const submitForm = () => { alert(`Form is sent, ${username}, ${password}`) }
+
     return (
         <>
             { showLogin
@@ -18,17 +20,18 @@ function Portal() {
                     setPassword={setPassword}
                     setUsername={setUsername}
                     toggle={toggleLoginSignup}
+                    submitForm={submitForm}
                 />
                 : <Signup
+                    password={password}
                     setPassword={setPassword}
                     setUsername={setUsername}
                     toggle={toggleLoginSignup}
+                    submitForm={submitForm}
 
                 />
             }
-
-            {username}
-            {password}        </>
+        </>
     )
 
 }

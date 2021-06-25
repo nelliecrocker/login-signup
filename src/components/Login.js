@@ -1,14 +1,17 @@
-function Login({ setUsername, setPassword, toggle }) {
+function Login({ username, setUsername, setPassword, toggle, submitForm }) {
     return (
         <form>
             <h1>Login</h1>
             <label>Username</label>
-            <input onChange={(e) => { setUsername(e.target.value) }}></input>
+            <input placeholder={username} onChange={(e) => { setUsername(e.target.value) }}></input>
             <br />
+
             <label>Password</label>
-            <input onChange={(e) => { setPassword(e.target.value) }}></input>
+
+            <input type='password' onChange={(e) => { setPassword(e.target.value) }}></input>
+
             <a onClick={toggle}>Don't have an account?</a>
-            <button>Login</button>
+            <button type="button" onClick={submitForm}>Login</button>
         </form>
     )
 }
